@@ -1,12 +1,18 @@
-import { useState } from "react";
+import { ToggleCartItemProvider } from "./components/provider/ToggleCartItemProvider";
+import { ToastProvider } from "./components/provider/ToastProvider";
+import { LanguageProvider } from "./components/provider/LanguageProvider";
+
+import Mall from "./pages/Mall";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <>
-      <h1>React Shopping Products</h1>
-    </>
+    <LanguageProvider>
+      <ToastProvider>
+        <ToggleCartItemProvider>
+          <Mall />
+        </ToggleCartItemProvider>
+      </ToastProvider>
+    </LanguageProvider>
   );
 }
 
